@@ -16,10 +16,11 @@ const Dashboard = ({ transactions, deleteTransaction }) => {
 
   {/* Transactions */}
   <div className="bg-white dark:bg-cardDark rounded-2xl shadow-lg p-6 h-[40%] overflow-y-auto">
-    <TransactionList
-      transactions={transactions}
-      deleteTransaction={deleteTransaction}
-    />
+   <TransactionList
+  transactions={transactions}
+  deleteTransaction={deleteTransaction}
+/>
+
   </div>
 </div>
 

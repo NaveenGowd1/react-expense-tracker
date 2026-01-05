@@ -21,8 +21,11 @@ function App() {
   };
 
   const deleteTransaction = (id) => {
-    setTransactions(transactions.filter((t) => t.id !== id));
+    setTransactions((prev) =>
+      prev.filter((t) => t.id !== id)
+    );
   };
+
 
   const filteredTransactions =
     selectedMonth === "all"
