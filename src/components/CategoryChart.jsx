@@ -41,12 +41,22 @@ const CategoryChart = ({ transactions }) => {
 
         <ResponsiveContainer>
           <BarChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="category" />
-            <YAxis />
-            <Tooltip />
-            <Bar dataKey="amount" fill="#3b82f6" />
-          </BarChart>
+  <XAxis dataKey="category" stroke="#9CA3AF" fontSize={12} />
+  <YAxis stroke="#9CA3AF" fontSize={12} />
+  <Tooltip
+    contentStyle={{
+      backgroundColor: "#111827",
+      border: "1px solid #1F2937",
+      color: "#E5E7EB",
+    }}
+  />
+  <Bar
+    dataKey="amount"
+    fill="#6366F1"
+    radius={[6, 6, 0, 0]}
+  />
+</BarChart>
+
         </ResponsiveContainer>
       </div>
     </div>

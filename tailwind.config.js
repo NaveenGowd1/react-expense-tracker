@@ -12,13 +12,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#6366f1", // Indigo
-        secondary: "#22c55e", // Green
-        danger: "#ef4444",
-        surfaceDark: "#0f172a",
-        cardDark: "#020617",
+        bgDark: "#0B1120",
+        cardDark: "#111827",
+        borderDark: "#1F2937",
+        textMain: "#E5E7EB",
+        textMuted: "#9CA3AF",
+        accent: "#6366F1",
+        success: "#22C55E",
+        danger: "#EF4444",
       },
     },
   },
   plugins: [],
 };
+
