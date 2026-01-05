@@ -13,24 +13,17 @@ const Balance = ({ transactions }) => {
   ).toFixed(2);
 
   return (
-    <>
-      <div className="text-center my-4">
-        <h4 className="text-gray-500">Your Balance</h4>
-        <h2 className="text-2xl font-semibold">₹{total}</h2>
-      </div>
+  <div className="bg-white p-4 rounded shadow text-center">
+    <h4 className="text-gray-500">Balance</h4>
+    <h2 className="text-2xl font-bold">₹{total}</h2>
 
-      <div className="flex justify-between bg-gray-100 p-4 rounded mb-4">
-        <div>
-          <h4 className="text-sm">Income</h4>
-          <p className="text-green-600 font-semibold">₹{income}</p>
-        </div>
-        <div>
-          <h4 className="text-sm">Expense</h4>
-          <p className="text-red-600 font-semibold">₹{expense}</p>
-        </div>
-      </div>
-    </>
-  );
+    <div className="flex justify-between mt-3">
+      <span className="text-green-600">+₹{income}</span>
+      <span className="text-red-500">-₹{expense}</span>
+    </div>
+  </div>
+);
+
 };
 
 export default Balance;

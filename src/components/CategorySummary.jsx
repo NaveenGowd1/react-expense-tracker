@@ -6,7 +6,8 @@ const CategorySummary = ({ transactions }) => {
   }, {});
 
   return (
-    <div className="my-4">
+    <div className="bg-white p-4 rounded shadow h-full">
+
       <h3 className="font-semibold mb-2">Category Summary</h3>
 
       {Object.keys(categoryTotals).length === 0 && (

@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react";
-import Balance from "./components/Balance";
-import TransactionList from "./components/TransactionList";
-import AddTransaction from "./components/AddTransaction";
-import MonthFilter from "./components/MonthFilter";
-import CategorySummary from "./components/CategorySummary";
-import CategoryChart from "./components/CategoryChart";
-
+import Sidebar from "./components/Sidebar";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   const [transactions, setTransactions] = useState(() => {
@@ -35,43 +30,17 @@ function App() {
       );
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-6 rounded-xl shadow-md w-96">
-        <h1 className="text-2xl font-bold text-center mb-4">
-          Expense Tracker
-        </h1>
+    <div className="flex h-screen overflow-hidden bg-gray-100">
+      <Sidebar
+        addTransaction={addTransaction}
+        selectedMonth={selectedMonth}
+        setSelectedMonth={setSelectedMonth}
+      />
 
-        <MonthFilter
-          selectedMonth={selectedMonth}
-          setSelectedMonth={setSelectedMonth}
-        />
-
-        <Balance transactions={filteredTransactions} />
-
-        <TransactionList
-          transactions={filteredTransactions}
-          deleteTransaction={deleteTransaction}
-        />
-
-        <AddTransaction addTransaction={addTransaction} />
-        <Balance transactions={filteredTransactions} />
-
-        <CategorySummary transactions={filteredTransactions} />
-
-        <TransactionList
-          transactions={filteredTransactions}
-          deleteTransaction={deleteTransaction}
-        />
-        <CategorySummary transactions={filteredTransactions} />
-
-        <CategoryChart transactions={filteredTransactions} />
-
-        <TransactionList
-          transactions={filteredTransactions}
-          deleteTransaction={deleteTransaction}
-        />
-
-      </div>
+      <Dashboard
+        transactions={filteredTransactions}
+        deleteTransaction={deleteTransaction}
+      />
     </div>
   );
 }
