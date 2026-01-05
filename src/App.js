@@ -3,6 +3,8 @@ import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
+
   const [transactions, setTransactions] = useState(() => {
     const saved = localStorage.getItem("transactions");
     return saved ? JSON.parse(saved) : [];
@@ -30,18 +32,24 @@ function App() {
       );
 
   return (
-    <div className="flex h-screen overflow-hidden bg-gradient-to-br from-slate-100 via-gray-100 to-slate-200">
+    <div className={darkMode ? "dark" : ""}>
+      <div className="flex h-screen overflow-hidden bg-slate-100 dark:bg-surfaceDark transition-colors">
 
-      <Sidebar
-        addTransaction={addTransaction}
-        selectedMonth={selectedMonth}
-        setSelectedMonth={setSelectedMonth}
-      />
 
-      <Dashboard
-        transactions={filteredTransactions}
-        deleteTransaction={deleteTransaction}
-      />
+        <Sidebar
+          addTransaction={addTransaction}
+          selectedMonth={selectedMonth}
+          setSelectedMonth={setSelectedMonth}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+        />
+
+
+        <Dashboard
+          transactions={filteredTransactions}
+          deleteTransaction={deleteTransaction}
+        />
+      </div>
     </div>
   );
 }

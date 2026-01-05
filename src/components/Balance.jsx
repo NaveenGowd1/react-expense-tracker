@@ -12,24 +12,23 @@ const Balance = ({ transactions }) => {
       .reduce((acc, val) => acc + val, 0) * -1
   ).toFixed(2);
 return (
-  <div className="bg-white/80 backdrop-blur-md border border-white/40 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition">
-    <h4 className="text-sm text-gray-500 uppercase tracking-wide">
+  <div className="bg-white dark:bg-cardDark rounded-2xl shadow-lg p-6 text-center">
+    <p className="text-xs uppercase tracking-wide text-gray-400">
       Total Balance
-    </h4>
+    </p>
 
-    <h2 className="text-3xl font-bold mt-2 text-gray-800">
+    <h2 className="text-3xl font-bold mt-2 text-gray-900 dark:text-white">
       ₹{total}
     </h2>
 
     <div className="flex justify-between mt-6">
       <div>
-        <p className="text-xs text-gray-500">Income</p>
-        <p className="text-green-600 font-semibold">₹{income}</p>
+        <p className="text-xs text-gray-400">Income</p>
+        <p className="text-secondary font-semibold">₹{income}</p>
       </div>
-
       <div>
-        <p className="text-xs text-gray-500">Expense</p>
-        <p className="text-red-500 font-semibold">₹{expense}</p>
+        <p className="text-xs text-gray-400">Expense</p>
+        <p className="text-danger font-semibold">₹{expense}</p>
       </div>
     </div>
   </div>
