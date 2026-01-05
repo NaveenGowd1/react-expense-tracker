@@ -11,18 +11,30 @@ const Balance = ({ transactions }) => {
       .filter((a) => a < 0)
       .reduce((acc, val) => acc + val, 0) * -1
   ).toFixed(2);
+return (
+  <div className="bg-white/80 backdrop-blur-md border border-white/40 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition">
+    <h4 className="text-sm text-gray-500 uppercase tracking-wide">
+      Total Balance
+    </h4>
 
-  return (
-  <div className="bg-white p-4 rounded shadow text-center">
-    <h4 className="text-gray-500">Balance</h4>
-    <h2 className="text-2xl font-bold">₹{total}</h2>
+    <h2 className="text-3xl font-bold mt-2 text-gray-800">
+      ₹{total}
+    </h2>
 
-    <div className="flex justify-between mt-3">
-      <span className="text-green-600">+₹{income}</span>
-      <span className="text-red-500">-₹{expense}</span>
+    <div className="flex justify-between mt-6">
+      <div>
+        <p className="text-xs text-gray-500">Income</p>
+        <p className="text-green-600 font-semibold">₹{income}</p>
+      </div>
+
+      <div>
+        <p className="text-xs text-gray-500">Expense</p>
+        <p className="text-red-500 font-semibold">₹{expense}</p>
+      </div>
     </div>
   </div>
 );
+
 
 };
 

@@ -10,11 +10,13 @@ const TransactionList = ({ transactions, deleteTransaction }) => {
       <ul>
         {transactions.map((t) => (
           <li
-            key={t.id}
-            className={`flex justify-between items-center p-2 mb-2 rounded border-r-4 ${
-              t.amount < 0 ? "border-red-500" : "border-green-500"
-            }`}
-          >
+            
+  key={t.id}
+  className={`flex justify-between items-center p-4 mb-3 rounded-xl bg-white shadow-sm hover:shadow-md transition border-l-4 ${
+    t.amount < 0 ? "border-red-500" : "border-green-500"
+  }`}
+    >
+
             <div>
               <p className="font-medium">{t.text}</p>
               <p className="text-xs text-gray-500">
@@ -27,12 +29,10 @@ const TransactionList = ({ transactions, deleteTransaction }) => {
                 {t.amount < 0 ? "-" : "+"}₹{Math.abs(t.amount)}
               </span>
 
-              <button
-                onClick={() => deleteTransaction(t.id)}
-                className="text-red-500 font-bold hover:text-red-700"
-              >
-                ❌
-              </button>
+                <button className="text-gray-400 hover:text-red-500 transition">
+    ✖
+    </button>
+
             </div>
           </li>
         ))}

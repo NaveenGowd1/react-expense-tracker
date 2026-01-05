@@ -29,7 +29,8 @@ const AddTransaction = ({ addTransaction }) => {
     <div className="mt-4">
       <h3 className="font-semibold mb-2">Add Transaction</h3>
 
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="w-full rounded-xl border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-2"
+>
         <input
           type="text"
           placeholder="Description"
@@ -65,7 +66,8 @@ const AddTransaction = ({ addTransaction }) => {
           onChange={(e) => setDate(e.target.value)}
         />
 
-        <button className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+        <button className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-2 rounded-xl hover:scale-[1.02] transition"
+>
           Add Transaction
         </button>
       </form>

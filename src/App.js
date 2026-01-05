@@ -30,7 +30,8 @@ function App() {
       );
 
   return (
-    <div className="flex h-screen overflow-hidden bg-gray-100">
+    <div className="flex h-screen overflow-hidden bg-gradient-to-br from-slate-100 via-gray-100 to-slate-200">
+
       <Sidebar
         addTransaction={addTransaction}
         selectedMonth={selectedMonth}

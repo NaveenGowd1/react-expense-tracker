@@ -29,13 +29,15 @@ const CategoryChart = ({ transactions }) => {
   }
 
   return (
-    <div className="bg-white p-4 rounded shadow h-full">
+   <div className="bg-white/80 backdrop-blur-md border border-white/40 rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+
 
       <h3 className="font-semibold mb-2 text-center">
         Category-wise Expense Chart
       </h3>
 
-     <div className="w-full h-48">
+   <div className="w-full h-52">
+
 
         <ResponsiveContainer>
           <BarChart data={chartData}>

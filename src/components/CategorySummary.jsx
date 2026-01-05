@@ -6,7 +6,8 @@ const CategorySummary = ({ transactions }) => {
   }, {});
 
   return (
-    <div className="bg-white p-4 rounded shadow h-full">
+   <div className="bg-white/80 backdrop-blur-md border border-white/40 rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+
 
       <h3 className="font-semibold mb-2">Category Summary</h3>
 
@@ -16,10 +17,8 @@ const CategorySummary = ({ transactions }) => {
 
       <ul className="space-y-2">
         {Object.entries(categoryTotals).map(([category, total]) => (
-          <li
-            key={category}
-            className="flex justify-between bg-gray-100 p-2 rounded"
-          >
+          <li className="flex justify-between items-center bg-white rounded-xl px-4 py-2 shadow-sm">
+
             <span>{category}</span>
             <span
               className={`font-semibold ${
