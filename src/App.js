@@ -4,6 +4,7 @@ import TransactionList from "./components/TransactionList";
 import AddTransaction from "./components/AddTransaction";
 import MonthFilter from "./components/MonthFilter";
 import CategorySummary from "./components/CategorySummary";
+import CategoryChart from "./components/CategoryChart";
 
 
 function App() {
@@ -56,6 +57,14 @@ function App() {
         <Balance transactions={filteredTransactions} />
 
         <CategorySummary transactions={filteredTransactions} />
+
+        <TransactionList
+          transactions={filteredTransactions}
+          deleteTransaction={deleteTransaction}
+        />
+        <CategorySummary transactions={filteredTransactions} />
+
+        <CategoryChart transactions={filteredTransactions} />
 
         <TransactionList
           transactions={filteredTransactions}
